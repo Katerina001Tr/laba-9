@@ -30,4 +30,19 @@ while cc2 != 1:
     else:
         cc2 += 1
         logging.info('Ввели корректное число попыток({})'.format(k))        
+i = 1  
+while i != k + 1:  
+    print(i, 'попытка')
+    logging.info('Попытка отгадать число №({})'.format(i))
+    cc3 = 0  
+    while cc3 != 1:  
+        try:
+            answer = int(input('Какое число загадал компьютер? '))
+            logging.info('Вводят предполагаемое число, которое загадал компьютер')
+        except ValueError:
+            print('Вы ввели не число!\nПробуйте снова\n')
+            logging.error('Ввели не число!')
+        else:
+            cc3 += 1
+            logging.info('Ввели корректное предполагаемое число, которое загадал компьютер({})'.format(answer))
         
